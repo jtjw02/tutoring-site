@@ -4,16 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — J. Tutoring</title>
+<meta name="description" content="Contact J. Tutoring about one-to-one VCE General Maths tutoring in Melbourne or online. Expect a reply within 1–2 days.">
+<link rel="canonical" href="https://justingenmaths.com/contact.html">
+<meta name="theme-color" content="#0B0B0A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — J. Tutoring">
+<meta property="og:description" content="Start an enquiry about one-to-one VCE General Maths tutoring in Melbourne or online.">
+<meta property="og:url" content="https://justingenmaths.com/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Space+Grotesk:wght@300..600&display=swap">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="side-tag">Melbourne — VCE General Maths — 2026</div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="side-tag" aria-hidden="true">Melbourne — VCE General Maths — 2026</div>
 
-<nav>
+<nav aria-label="Primary navigation">
   <a class="mark" href="index.html">J. Tutoring</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navList" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul id="navList">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -21,10 +33,11 @@
     <li><a href="resources.html">Resources</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li class="current"><a href="contact.html">Contact</a></li>
+    <li class="current"><a href="contact.html" aria-current="page">Contact</a></li>
   </ul>
 </nav>
 
+<main id="main-content">
 <div class="page-header">
   <div class="eyebrow">Contact</div>
   <h1>Get in touch.</h1>
@@ -33,14 +46,14 @@
 
 <div class="form-grid reveal">
   <div id="formWrap">
-    <form id="contactForm" action="https://formspree.io/f/mwvgwqgv" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/mwvgwqgv" method="POST" novalidate>
       <div class="field">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" autocomplete="name" required>
       </div>
       <div class="field">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" autocomplete="email" required>
       </div>
       <div class="field">
         <label for="year">Year level / subject</label>
@@ -50,10 +63,11 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" placeholder="What are you studying, and what's not clicking?" required></textarea>
       </div>
+      <div class="form-honeypot" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
       <button type="submit" class="cta" id="submitBtn">Send message</button>
-      <div id="formError" style="display:none; color:var(--red); font-size:13px; margin-top:16px; line-height:1.6;"></div>
+      <div id="formError" class="form-message form-message--error" role="alert" aria-live="assertive" hidden></div>
     </form>
-    <div id="formSuccess" style="display:none;">
+    <div id="formSuccess" class="form-success" role="status" aria-live="polite" hidden tabindex="-1">
       <p class="accent" style="font-size:26px; margin-bottom:14px;">Message sent.</p>
       <p style="font-size:14px; opacity:0.7; max-width:380px; line-height:1.6;">Thanks, that's come through. Expect a reply within a day or two.</p>
     </div>
@@ -83,6 +97,8 @@
   </div>
 </div>
 
+</main>
+
 <footer>
   <span>Melbourne, Australia</span>
   <span>Primary – VCE maths tutoring</span>
@@ -90,44 +106,5 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  const contactForm = document.getElementById('contactForm');
-  const formError = document.getElementById('formError');
-  const formSuccess = document.getElementById('formSuccess');
-  const submitBtn = document.getElementById('submitBtn');
-
-  contactForm.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    formError.style.display = 'none';
-    submitBtn.textContent = 'Sending…';
-    submitBtn.disabled = true;
-
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        contactForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-      } else {
-        const result = await response.json().catch(() => null);
-        formError.textContent = (result && result.errors)
-          ? result.errors.map(e => e.message).join(', ')
-          : "Something went wrong sending that. Please try again, or email directly instead.";
-        formError.style.display = 'block';
-        submitBtn.textContent = 'Send message';
-        submitBtn.disabled = false;
-      }
-    } catch (err) {
-      formError.textContent = "Something went wrong sending that. Please try again, or email directly instead.";
-      formError.style.display = 'block';
-      submitBtn.textContent = 'Send message';
-      submitBtn.disabled = false;
-    }
-  });
-</script>
 </body>
 </html>

@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — J. Tutoring</title>
+<meta name="description" content="Meet the Melbourne VCE General Maths tutor behind J. Tutoring: study score 50, ATAR 98.00, finance background, and tutoring since 2020.">
+<link rel="canonical" href="https://justingenmaths.com/about.html">
+<meta name="theme-color" content="#0B0B0A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — J. Tutoring">
+<meta property="og:description" content="Meet the Melbourne VCE General Maths tutor behind J. Tutoring.">
+<meta property="og:url" content="https://justingenmaths.com/about.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Space+Grotesk:wght@300..600&display=swap">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <style>
   .about-photo{flex:0 0 260px; aspect-ratio:1/1.1; align-self:start;}
@@ -11,15 +22,16 @@
 </head>
 <body>
 
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="side-tag">Melbourne — VCE General Maths — 2026</div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="side-tag" aria-hidden="true">Melbourne — VCE General Maths — 2026</div>
 
-<nav>
+<nav aria-label="Primary navigation">
   <a class="mark" href="index.html">J. Tutoring</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navList" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul id="navList">
     <li><a href="index.html">Home</a></li>
-    <li class="current"><a href="about.html">About</a></li>
+    <li class="current"><a href="about.html" aria-current="page">About</a></li>
     <li><a href="tutoring.html">Tutoring</a></li>
     <li><a href="resources.html">Resources</a></li>
     <li><a href="pricing.html">Pricing</a></li>
@@ -28,6 +40,7 @@
   </ul>
 </nav>
 
+<main id="main-content">
 <div class="page-header">
   <div class="eyebrow">About</div>
   <h1>The tutor.</h1>
@@ -37,7 +50,8 @@
 <div class="section reveal">
   <div class="two-col">
     <div class="copy" style="font-size:15px; line-height:1.85; opacity:0.85;">
-      <p style="margin-bottom:24px;">I started tutoring VCE General Maths in 2020, almost by accident. A family friend needed help before a SAC, and it turned out that explaining a concept clearly is its own skill, separate from just knowing the content well, even finishing school myself with an ATAR of 98.00 and a perfect study score of 50 in General Maths itself.</p>
+      <p style="margin-bottom:24px;">I started tutoring VCE General Maths in 2020, almost by accident. A family friend needed help before a SAC, and I found that explaining a concept clearly is its own skill, separate from simply knowing the content.</p>
+      <p style="margin-bottom:24px;">I finished school with an ATAR of 98.00 and a perfect study score of 50 in General Maths, but the result that matters most in tutoring is being able to make the underlying pattern clear to someone seeing it for the first time.</p>
       <p style="margin-bottom:24px;">Since then I've completed a Master of Finance and a Bachelor of Commerce (double major in Finance and Economics) at the University of Melbourne. I also tutor first-year statistics and second-year corporate finance at university level, which means I'm constantly re-explaining technical material to people meeting it for the first time, a habit that carries straight back into VCE tutoring. I've also been directly involved in writing the VCE General Maths textbook at Edrolo, which has helped me understand the course at a level most tutors never need to, not just how to solve the problems, but how the whole syllabus fits together and where students actually get stuck.</p>
       <p style="margin-bottom:24px;">The understand, diagnose, build, finish process on the home page isn't just a tagline, it's genuinely what I believe is the best way to get better at learning anything: start by properly understanding the concept from first principles, then let practice show exactly where marks are still being lost, rebuild whatever gap turns up, and finish by drilling under real exam conditions until it's automatic. Most of what looks like "not being a maths person" turns out to be a specific, findable gap somewhere earlier in the chain.</p>
       <p>Bilingual in English and Mandarin, which comes in handy more often than you'd expect when a concept just isn't landing in one language.</p>
@@ -50,7 +64,7 @@
       </div>
     </div>
     <div class="framed-box about-photo">
-      <svg width="55%" viewBox="0 0 100 100">
+      <svg width="55%" viewBox="0 0 100 100" role="img" aria-label="Abstract mathematical diagram representing the tutor's teaching approach">
         <circle cx="50" cy="50" r="32" stroke="#0B0B0A" stroke-width="1" fill="none"/>
         <line x1="50" y1="18" x2="50" y2="82" stroke="#C81E3A" stroke-width="1"/>
         <line x1="18" y1="50" x2="82" y2="50" stroke="#0B0B0A" stroke-width="0.75"/>
@@ -58,6 +72,13 @@
       <div class="badge"><div class="num">'20</div><div class="cap">since</div></div>
     </div>
   </div>
+</div>
+</main>
+
+<div class="section tight about-cta">
+  <h2>Want to see whether the approach fits?</h2>
+  <p class="lede">Start with a trial lesson or send a few details about what you're studying.</p>
+  <a class="cta" href="contact.html" style="margin-top:26px;">Request a trial</a>
 </div>
 
 <footer>

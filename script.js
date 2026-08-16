@@ -1,38 +1,126 @@
-// custom cursor dot
+// Custom cursor dot.
 const dot = document.getElementById('cursorDot');
 if (dot) {
-  window.addEventListener('mousemove', e => {
-    dot.style.left = e.clientX + 'px';
-    dot.style.top = e.clientY + 'px';
+  window.addEventListener('mousemove', event => {
+    dot.style.left = `${event.clientX}px`;
+    dot.style.top = `${event.clientY}px`;
   });
 }
 
-// mobile nav toggle
+// Mobile navigation toggle.
 const navToggle = document.getElementById('navToggle');
 const navList = document.getElementById('navList');
 if (navToggle && navList) {
   navToggle.addEventListener('click', () => {
-    navList.classList.toggle('open');
+    const isOpen = navList.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   });
-  navList.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => navList.classList.remove('open'));
+
+  navList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+    });
   });
 }
 
-// scroll reveal
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// Respect reduced-motion preferences.
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// hero graph draw-in (home page only)
+// Scroll reveal.
+if (reduceMotion) {
+  document.querySelectorAll('.reveal').forEach(element => element.classList.add('in'));
+} else {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+}
+
+// Hero graph draw-in (home page only).
 const path = document.getElementById('parabola');
-if (path) {
-  const len = path.getTotalLength();
-  path.style.strokeDasharray = len;
-  path.style.strokeDashoffset = len;
+if (path && !reduceMotion) {
+  const length = path.getTotalLength();
+  path.style.strokeDasharray = length;
+  path.style.strokeDashoffset = length;
   requestAnimationFrame(() => {
     path.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(0.16,1,0.3,1)';
     path.style.strokeDashoffset = 0;
+  });
+}
+
+// Contact form: accessible validation, a spam honeypot, and clear state changes.
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const formError = document.getElementById('formError');
+  const formSuccess = document.getElementById('formSuccess');
+  const submitButton = document.getElementById('submitBtn');
+  const honeypot = document.getElementById('website');
+
+  const showError = message => {
+    formError.textContent = message;
+    formError.hidden = false;
+  };
+
+  const markInvalidFields = () => {
+    contactForm.querySelectorAll('input, textarea').forEach(field => {
+      if (field.id === 'website') return;
+      if (field.validity.valid) {
+        field.removeAttribute('aria-invalid');
+      } else {
+        field.setAttribute('aria-invalid', 'true');
+      }
+    });
+  };
+
+  contactForm.querySelectorAll('input, textarea').forEach(field => {
+    field.addEventListener('input', () => {
+      if (field.validity.valid) field.removeAttribute('aria-invalid');
+      if (contactForm.checkValidity()) formError.hidden = true;
+    });
+  });
+
+  contactForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    formError.hidden = true;
+
+    markInvalidFields();
+    if (!contactForm.checkValidity()) {
+      const firstInvalid = contactForm.querySelector(':invalid');
+      if (firstInvalid) firstInvalid.focus();
+      showError('Please complete the required fields with a valid email address.');
+      return;
+    }
+
+    if (honeypot && honeypot.value) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        const detail = result?.errors?.map(error => error.message).join(', ');
+        throw new Error(detail || 'Something went wrong sending that.');
+      }
+
+      contactForm.hidden = true;
+      formSuccess.hidden = false;
+      formSuccess.focus();
+    } catch (error) {
+      showError(`${error.message} Please try again, or email directly instead.`);
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send message';
+    }
   });
 }
