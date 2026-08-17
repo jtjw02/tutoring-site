@@ -253,6 +253,27 @@ nav li.current a{color:var(--red);}
 .text-link{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--ink); padding-bottom:4px;}
 .about-cta{padding-top:20px; padding-bottom:100px;}
 
+/* testimonials */
+.testimonials{max-width:1180px; margin:0 auto; padding:100px 56px 110px 90px;}
+.testimonials-heading{display:grid; grid-template-columns:0.8fr 1.2fr; column-gap:60px; align-items:end; margin-bottom:48px;}
+.testimonials-heading .fit-heading{margin-bottom:14px; grid-column:1;}
+.testimonials-heading h2{font-family:'Bodoni Moda', serif; font-weight:500; font-size:clamp(30px,4vw,52px); line-height:1.1; grid-column:2; grid-row:1 / span 2;}
+.testimonials-heading p{font-size:14px; line-height:1.7; opacity:0.65; max-width:300px;}
+.testimonial-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--ink); border:0.5px solid var(--ink);}
+.testimonial-card{position:relative; background:var(--paper); padding:38px 38px 32px; min-height:250px; display:flex; flex-direction:column;}
+.testimonial-mark{font-family:'Bodoni Moda', serif; color:var(--red); font-size:62px; line-height:0.7; opacity:0.75; margin-bottom:20px;}
+.testimonial-card blockquote{font-family:'Bodoni Moda', serif; font-style:italic; font-size:18px; line-height:1.5; max-width:500px;}
+.testimonial-card footer{border:0; padding:28px 0 0; margin-top:auto; display:flex; flex-direction:column; align-items:flex-start; gap:4px; font-size:11px; letter-spacing:0.08em; opacity:1;}
+.testimonial-card footer strong{font-weight:500; text-transform:uppercase;}
+.testimonial-card footer span{color:var(--taupe); text-transform:uppercase; font-size:10px; letter-spacing:0.1em; text-align:left !important;}
+@media (max-width:900px){
+  .testimonials{padding:70px 24px 80px;}
+  .testimonials-heading{display:block; margin-bottom:36px;}
+  .testimonials-heading h2{margin-bottom:18px;}
+  .testimonial-grid{grid-template-columns:1fr;}
+  .testimonial-card{min-height:0; padding:32px 26px 28px;}
+}
+
 /* contact form */
 .form-grid{display:grid; grid-template-columns:1.2fr 0.8fr; gap:80px; max-width:1180px; margin:0 auto; padding:60px 56px 110px 90px;}
 .field{margin-bottom:30px;}
