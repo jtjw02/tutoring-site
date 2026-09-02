@@ -6,30 +6,31 @@
 <title>J. Tutoring — VCE General Maths, Melbourne</title>
 <meta name="description" content="One-to-one VCE General Maths tutoring in Melbourne and online. Learn from first principles, diagnose lost marks, and prepare with VCAA-style practice.">
 <link rel="canonical" href="https://justingenmaths.com/">
-<meta name="theme-color" content="#0B0B0A">
+<meta name="theme-color" content="#0A0A0A">
 <meta property="og:type" content="website">
 <meta property="og:title" content="J. Tutoring — VCE General Maths, Melbourne">
 <meta property="og:description" content="One-to-one VCE General Maths tutoring in Melbourne and online.">
 <meta property="og:url" content="https://justingenmaths.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Space+Grotesk:wght@300..600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300..600&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .masthead{text-align:center; padding:64px 40px 20px; padding-left:90px;}
-  .mast{font-family:'Bodoni Moda', serif; font-weight:600; text-transform:uppercase; font-size:clamp(56px,11vw,168px); letter-spacing:-0.01em; line-height:0.9;}
-  .mast-sub{font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--taupe); margin-top:14px;}
+  .masthead{text-align:center; padding:70px 40px 24px; padding-left:90px;}
+  .mast{font-family:var(--serif); font-weight:600; text-transform:uppercase; font-size:clamp(56px,11vw,168px); letter-spacing:-0.02em; line-height:0.9;}
+  .mast-sub{font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-top:16px;}
   .cover-rule{
     display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:20px;
-    border-top:0.5px solid var(--ink); border-bottom:0.5px solid var(--ink);
-    padding:14px 56px 14px 90px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:14px 56px 14px 90px; font-family:var(--mono); font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink);
   }
   .cover-rule span:nth-child(2){text-align:center;}
   .cover-rule span:last-child{text-align:right;}
   .cover-main{display:flex; align-items:center; gap:60px; padding:70px 56px 90px 90px; max-width:1240px; margin:0 auto;}
   .cover-copy{flex:1; min-width:280px;}
-  .coverline{font-family:'Bodoni Moda', serif; font-weight:500; font-size:clamp(36px,5vw,66px); line-height:1.08;}
+  .coverline{font-family:var(--serif); font-weight:500; font-size:clamp(36px,5vw,66px); line-height:1.08; letter-spacing:-0.02em;}
+  .coverline .accent{font-style:italic; text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px;}
   .sub{font-size:15.5px; line-height:1.65; opacity:0.65; max-width:420px; margin-top:28px; font-weight:300;}
   .cover-photo{flex:0 0 300px; aspect-ratio:1/1.1;}
   @media (max-width:900px){
@@ -42,12 +43,12 @@
   .quote{padding-bottom:90px;}
   .about-teaser{max-width:1180px; margin:0 auto; padding:90px 56px 110px 90px; display:flex; gap:60px; align-items:center; flex-wrap:wrap;}
   .about-teaser .copy{flex:1; min-width:280px;}
-  .about-teaser h2{font-family:'Bodoni Moda', serif; font-weight:500; font-size:clamp(26px,3vw,36px); margin-bottom:18px;}
+  .about-teaser h2{font-family:var(--serif); font-weight:500; font-size:clamp(26px,3vw,36px); margin-bottom:18px; letter-spacing:-0.01em;}
   .about-teaser p{font-size:14.5px; line-height:1.75; opacity:0.7; max-width:520px;}
   .about-teaser a.cta{margin-top:26px;}
   @media (max-width:900px){.about-teaser{padding-left:24px; padding-right:24px;}}
   .closing{background:var(--ink); color:var(--white); text-align:center; padding:90px 40px;}
-  .closing h2{font-family:'Bodoni Moda', serif; font-style:italic; font-weight:500; font-size:clamp(28px,4vw,48px); margin-bottom:30px;}
+  .closing h2{font-family:var(--serif); font-style:italic; font-weight:500; font-size:clamp(28px,4vw,48px); margin-bottom:30px;}
   .closing .cta{border-color:var(--white); color:var(--white);}
   .closing .cta:before{background:var(--white);}
   .closing .cta:hover{color:var(--ink);}
@@ -95,12 +96,12 @@
   </div>
   <div class="framed-box cover-photo">
     <svg width="100%" viewBox="0 0 300 300" role="img" aria-label="A stylised parabola representing progress through VCE General Maths">
-      <line x1="20" y1="150" x2="280" y2="150" stroke="#0B0B0A" stroke-width="0.75"/>
-      <line x1="150" y1="20" x2="150" y2="280" stroke="#0B0B0A" stroke-width="0.75"/>
-      <path id="parabola" d="M 30 260 Q 150 -20 270 260" fill="none" stroke="#C81E3A" stroke-width="1.5"/>
-      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.5s" cx="150" cy="60" r="3" fill="#0B0B0A"/>
-      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.65s" cx="90" cy="180" r="3" fill="#0B0B0A"/>
-      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.8s" cx="210" cy="180" r="3" fill="#0B0B0A"/>
+      <line x1="20" y1="150" x2="280" y2="150" stroke="#0A0A0A" stroke-width="0.75"/>
+      <line x1="150" y1="20" x2="150" y2="280" stroke="#0A0A0A" stroke-width="0.75"/>
+      <path id="parabola" d="M 30 260 Q 150 -20 270 260" fill="none" stroke="#0A0A0A" stroke-width="1.5"/>
+      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.5s" cx="150" cy="60" r="3" fill="#0A0A0A"/>
+      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.65s" cx="90" cy="180" r="3" fill="#0A0A0A"/>
+      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.8s" cx="210" cy="180" r="3" fill="#0A0A0A"/>
     </svg>
     <div class="badge"><div class="num">50</div><div class="cap">tutor score</div></div>
   </div>
@@ -115,25 +116,25 @@
   <div class="fit-row">
     <div class="fit-card">
       <div class="fit-word">UNDERSTAND</div>
-      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="28" cy="24" r="14" stroke="#0B0B0A" stroke-width="1.25"/><line x1="23" y1="40" x2="33" y2="40" stroke="#0B0B0A" stroke-width="1.25"/><line x1="25" y1="45" x2="31" y2="45" stroke="#0B0B0A" stroke-width="1"/><line x1="28" y1="6" x2="28" y2="12" stroke="#C81E3A" stroke-width="1.5"/></svg>
+      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="28" cy="24" r="14" stroke="#0A0A0A" stroke-width="1.25"/><line x1="23" y1="40" x2="33" y2="40" stroke="#0A0A0A" stroke-width="1.25"/><line x1="25" y1="45" x2="31" y2="45" stroke="#0A0A0A" stroke-width="1"/><line x1="28" y1="6" x2="28" y2="12" stroke="#0A0A0A" stroke-width="1.5"/></svg>
       <div class="label">The concept</div>
       <p>Every topic starts with the concept itself, taught from first principles, so it actually makes sense rather than just being memorised.</p>
     </div>
     <div class="fit-card mid">
       <div class="fit-word">DIAGNOSE</div>
-      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="24" cy="24" r="15" stroke="#0B0B0A" stroke-width="1.25"/><line x1="35" y1="35" x2="52" y2="52" stroke="#C81E3A" stroke-width="1.5"/><line x1="18" y1="24" x2="30" y2="24" stroke="#0B0B0A" stroke-width="1"/></svg>
+      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="24" cy="24" r="15" stroke="#0A0A0A" stroke-width="1.25"/><line x1="35" y1="35" x2="52" y2="52" stroke="#0A0A0A" stroke-width="1.5"/><line x1="18" y1="24" x2="30" y2="24" stroke="#0A0A0A" stroke-width="1"/></svg>
       <div class="label">The read</div>
       <p>From there, exercises and practice work show exactly where marks are still slipping, not just a vague sense of needing more practice.</p>
     </div>
     <div class="fit-card low">
       <div class="fit-word">REBUILD</div>
-      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><path d="M10 50 L50 50 L10 10 Z" stroke="#0B0B0A" stroke-width="1.25"/><line x1="18" y1="42" x2="24" y2="42" stroke="#C81E3A" stroke-width="1.25"/><line x1="18" y1="34" x2="30" y2="34" stroke="#0B0B0A" stroke-width="1"/></svg>
+      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><path d="M10 50 L50 50 L10 10 Z" stroke="#0A0A0A" stroke-width="1.25"/><line x1="18" y1="42" x2="24" y2="42" stroke="#0A0A0A" stroke-width="1.25"/><line x1="18" y1="34" x2="30" y2="34" stroke="#0A0A0A" stroke-width="1"/></svg>
       <div class="label">The build</div>
       <p>Whatever that practice turns up gets rebuilt properly, targeting that exact gap rather than re-covering everything that's already solid.</p>
     </div>
     <div class="fit-card tall">
       <div class="fit-word">AUTOMATE</div>
-      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="27" cy="30" r="16" stroke="#0B0B0A" stroke-width="1.25"/><line x1="27" y1="30" x2="27" y2="20" stroke="#0B0B0A" stroke-width="1.25"/><line x1="27" y1="30" x2="35" y2="34" stroke="#0B0B0A" stroke-width="1.25"/><path d="M40 14 L45 19 L52 10" stroke="#C81E3A" stroke-width="1.5" fill="none"/></svg>
+      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="27" cy="30" r="16" stroke="#0A0A0A" stroke-width="1.25"/><line x1="27" y1="30" x2="27" y2="20" stroke="#0A0A0A" stroke-width="1.25"/><line x1="27" y1="30" x2="35" y2="34" stroke="#0A0A0A" stroke-width="1.25"/><path d="M40 14 L45 19 L52 10" stroke="#0A0A0A" stroke-width="1.5" fill="none"/></svg>
       <div class="label">The finish</div>
       <p>Practice under real exam conditions, timed and marked against VCAA criteria, until the process is automatic.</p>
     </div>
@@ -184,7 +185,7 @@
 
 <div class="about-teaser reveal">
   <div class="framed-box" style="flex:0 0 220px; aspect-ratio:1/1.1;">
-    <svg width="60%" viewBox="0 0 100 100" role="img" aria-label="Abstract mathematical diagram representing the tutor's teaching approach"><circle cx="50" cy="50" r="30" stroke="#0B0B0A" stroke-width="1" fill="none"/><line x1="50" y1="20" x2="50" y2="80" stroke="#C81E3A" stroke-width="1"/></svg>
+    <svg width="60%" viewBox="0 0 100 100" role="img" aria-label="Abstract mathematical diagram representing the tutor's teaching approach"><circle cx="50" cy="50" r="30" stroke="#0A0A0A" stroke-width="1" fill="none"/><line x1="50" y1="20" x2="50" y2="80" stroke="#0A0A0A" stroke-width="1"/></svg>
   </div>
   <div class="copy">
     <h2>Taught by someone who still remembers what it's like to sit the exam.</h2>
