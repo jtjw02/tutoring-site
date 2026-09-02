@@ -13,65 +13,16 @@
 <meta property="og:url" content="https://justingenmaths.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300..600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300..600&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
-<style>
-  /* Hermes-style hero */
-  .hero{background:var(--ink); color:var(--white); display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center; padding:90px 56px 96px 90px;}
-  .hero-badge{display:inline-block; font-family:var(--mono); font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:var(--white); border:1px solid rgba(255,255,255,0.4); padding:8px 14px; margin-bottom:32px;}
-  .hero-title{font-family:var(--serif); font-weight:600; text-transform:uppercase; font-size:clamp(52px,7.6vw,112px); line-height:0.94; letter-spacing:-0.02em; margin:0;}
-  .hero-title span{display:block;}
-  .hero-title .hero-accent{font-style:italic; font-weight:500;}
-  .hero-sub{font-size:16px; line-height:1.7; opacity:0.72; max-width:480px; margin-top:28px; font-weight:300;}
-  .hero-actions{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
-  .btn-solid{display:inline-flex; align-items:center; gap:10px; background:var(--white); color:var(--ink); padding:16px 30px; text-decoration:none; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; border:1px solid var(--white); border-radius:0; transition:transform 0.25s var(--ease), background 0.25s var(--ease);}
-  .btn-solid:hover{background:var(--paper); transform:translateY(-2px);}
-  .btn-ghost{display:inline-flex; align-items:center; gap:10px; background:none; color:var(--white); padding:16px 30px; text-decoration:none; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; border:1px solid rgba(255,255,255,0.45); border-radius:0; transition:border-color 0.25s var(--ease), background 0.25s var(--ease);}
-  .btn-ghost:hover{border-color:var(--white); background:rgba(255,255,255,0.08);}
-  .terminal-box{margin-top:44px; border:1px solid rgba(255,255,255,0.3); max-width:520px;}
-  .terminal-bar{display:flex; align-items:center; gap:6px; padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.3);}
-  .terminal-dot{width:8px; height:8px; border-radius:50%; background:var(--white); opacity:0.5;}
-  .terminal-label{margin-left:auto; font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; opacity:0.6;}
-  .terminal-line{font-family:var(--mono); font-size:13px; padding:16px 18px; opacity:0.9; overflow-x:auto; white-space:nowrap;}
-  .term-prompt{color:var(--white); opacity:0.9; margin-right:8px;}
-  .term-arrow{opacity:0.55; margin:0 8px;}
-  .hero-visual{position:relative; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.35); padding:34px; min-height:340px;}
-  .hero-visual svg{width:100%; max-width:300px;}
-  .hero-visual .badge{background:var(--white); color:var(--ink);}
-  .hero-visual .badge .num{font-family:var(--serif); font-style:italic; font-weight:600; font-size:22px; line-height:1;}
-  .hero-visual .badge .cap{font-family:var(--mono); font-size:7px; letter-spacing:0.1em; text-transform:uppercase; margin-top:2px;}
-  @media (max-width:900px){
-    .hero{grid-template-columns:1fr; padding:60px 24px 70px; gap:44px;}
-    .hero-visual{min-height:240px; padding:24px;}
-  }
-  /* terminal strip (topics) */
-  .terminal-strip{border-top:1px solid rgba(255,255,255,0.25); border-bottom:1px solid rgba(255,255,255,0.25); background:var(--ink); color:var(--white); font-family:var(--mono); font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; padding:16px 56px 16px 90px; overflow-x:auto; white-space:nowrap; margin-top:1px;}
-  .terminal-strip .hi{color:var(--white); text-decoration:underline; text-underline-offset:5px;}
-  @media (max-width:900px){.terminal-strip{padding-left:24px; padding-right:24px; font-size:11px;}}
-  /* giant brand wordmark */
-  .giant-brand{font-family:var(--serif); font-weight:600; text-transform:uppercase; font-size:clamp(72px,15vw,210px); line-height:0.8; letter-spacing:-0.03em; text-align:center; color:var(--ink); padding:80px 56px 20px; user-select:none; white-space:nowrap; overflow:hidden;}
-  .quote{padding-bottom:90px;}
-  .about-teaser{max-width:1180px; margin:0 auto; padding:90px 56px 110px 90px; display:flex; gap:60px; align-items:center; flex-wrap:wrap;}
-  .about-teaser .copy{flex:1; min-width:280px;}
-  .about-teaser h2{font-family:var(--serif); font-weight:500; font-size:clamp(26px,3vw,36px); margin-bottom:18px; letter-spacing:-0.01em;}
-  .about-teaser p{font-size:14.5px; line-height:1.75; opacity:0.7; max-width:520px;}
-  .about-teaser a.cta{margin-top:26px;}
-  @media (max-width:900px){.about-teaser{padding-left:24px; padding-right:24px;}}
-  .closing{background:var(--ink); color:var(--white); text-align:center; padding:90px 40px;}
-  .closing h2{font-family:var(--serif); font-style:italic; font-weight:500; font-size:clamp(28px,4vw,48px); margin-bottom:30px;}
-  .closing .cta{border-color:var(--white); color:var(--white);}
-  .closing .cta:before{background:var(--white);}
-  .closing .cta:hover{color:var(--ink);}
-</style>
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Skip to content</a>
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <nav aria-label="Primary navigation">
-  <a class="mark" href="index.html">J. Tutoring</a>
+  <a class="mark" href="index.html">J. <span>Tutoring</span></a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navList" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul id="navList">
     <li class="current"><a href="index.html" aria-current="page">Home</a></li>
@@ -86,130 +37,166 @@
 
 <main id="main-content">
 
+<!-- ============ HERO (Hermes full-screen dark stage) ============ -->
 <div class="hero">
-  <div class="hero-copy">
-    <div class="hero-badge">One-to-one · Melbourne &amp; online</div>
-    <h1 class="hero-title">
-      <span>Made to</span>
-      <span>measure.</span>
-      <span class="hero-accent">Marked to</span>
-      <span class="hero-accent">perfection.</span>
-    </h1>
-    <p class="hero-sub">One-to-one VCE General Maths tutoring in Melbourne and online, taught from first principles, then sharpened by exactly where you're stuck.</p>
-    <div class="hero-actions">
-      <a class="btn-solid" href="contact.html">Request a trial</a>
-      <a class="btn-ghost" href="tutoring.html">See how it works</a>
-    </div>
-    <div class="terminal-box">
-      <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-label">contact</span></div>
-      <div class="terminal-line"><span class="term-prompt">$</span> trial@justingenmaths.com <span class="term-arrow">→</span> 20–30 min free lesson</div>
-    </div>
+  <div class="hero-badge">One-to-one · Melbourne &amp; online</div>
+  <h1 class="hero-title">
+    Made to<br>measure.<br><span class="it">Marked to</span><br><span class="it">perfection.</span>
+  </h1>
+  <p class="hero-sub">One-to-one VCE General Maths tutoring in Melbourne and online, taught from first principles, then sharpened by exactly where you're stuck.</p>
+  <div class="hero-actions">
+    <a class="btn btn-solid" href="contact.html">Request a trial</a>
+    <a class="btn btn-ghost" href="tutoring.html">See how it works</a>
   </div>
-  <div class="hero-visual">
-    <svg width="100%" viewBox="0 0 300 300" role="img" aria-label="A stylised parabola representing progress through VCE General Maths">
-      <line x1="20" y1="150" x2="280" y2="150" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="0.75"/>
-      <line x1="150" y1="20" x2="150" y2="280" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="0.75"/>
-      <path id="parabola" d="M 30 260 Q 150 -20 270 260" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
-      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.5s" cx="150" cy="60" r="3" fill="#FFFFFF"/>
-      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.65s" cx="90" cy="180" r="3" fill="#FFFFFF"/>
-      <circle class="dot" style="animation:dotIn 0.4s ease forwards; animation-delay:1.8s" cx="210" cy="180" r="3" fill="#FFFFFF"/>
-    </svg>
-    <div class="badge"><div class="num">50</div><div class="cap">tutor score</div></div>
-  </div>
+  <div class="hero-deco" aria-hidden="true">/\-_=+&lt;| -/= ~:*-/</div>
+  <div class="hero-eyebrow l">VCE General Maths — 2026</div>
+  <div class="hero-eyebrow r">Melbourne — online</div>
 </div>
 
-<div class="terminal-strip">
-  <span>data</span> — <span>algebra</span> — <span>measurement</span> — <span class="hi">financial maths</span> — <span>matrices</span> — <span>networks</span> — <span class="hi">recursion</span> — <span>data</span> — <span>algebra</span> — <span>measurement</span> — <span class="hi">financial maths</span> — <span>matrices</span> — <span>networks</span> — <span class="hi">recursion</span> —
+<!-- ============ INSTALL / START (terminal band) ============ -->
+<div class="install reveal">
+  <div class="mono">Start here</div>
+  <h2>Book a free trial lesson.</h2>
+  <p class="dek">A 20–30 minute session, in person or online, to understand your goals and current level before anything is committed.</p>
+  <div class="install-tabs" role="tablist" aria-label="Session format">
+    <button class="active" type="button" role="tab" aria-selected="true">In person</button>
+    <button type="button" role="tab" aria-selected="false">Online</button>
+  </div>
+  <div class="terminal" aria-label="How to start">
+    <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-label">contact</span></div>
+    <div class="terminal-line"><span class="p">$</span><span class="c" id="installLine">trial@justingenmaths.com → 20–30 min free lesson</span></div>
+  </div>
+  <div class="hint">No commitment · Notes included · Reply within 1–2 days</div>
 </div>
 
-<div class="fit reveal">
-  <div class="fit-heading">How it works</div>
-  <div class="fit-row">
-    <div class="fit-card">
-      <div class="fit-word">UNDERSTAND</div>
-      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="28" cy="24" r="14" stroke="#0A0A0A" stroke-width="1.25"/><line x1="23" y1="40" x2="33" y2="40" stroke="#0A0A0A" stroke-width="1.25"/><line x1="25" y1="45" x2="31" y2="45" stroke="#0A0A0A" stroke-width="1"/><line x1="28" y1="6" x2="28" y2="12" stroke="#0A0A0A" stroke-width="1.5"/></svg>
-      <div class="label">The concept</div>
-      <p>Every topic starts with the concept itself, taught from first principles, so it actually makes sense rather than just being memorised.</p>
-    </div>
-    <div class="fit-card mid">
-      <div class="fit-word">DIAGNOSE</div>
-      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="24" cy="24" r="15" stroke="#0A0A0A" stroke-width="1.25"/><line x1="35" y1="35" x2="52" y2="52" stroke="#0A0A0A" stroke-width="1.5"/><line x1="18" y1="24" x2="30" y2="24" stroke="#0A0A0A" stroke-width="1"/></svg>
-      <div class="label">The read</div>
-      <p>From there, exercises and practice work show exactly where marks are still slipping, not just a vague sense of needing more practice.</p>
-    </div>
-    <div class="fit-card low">
-      <div class="fit-word">REBUILD</div>
-      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><path d="M10 50 L50 50 L10 10 Z" stroke="#0A0A0A" stroke-width="1.25"/><line x1="18" y1="42" x2="24" y2="42" stroke="#0A0A0A" stroke-width="1.25"/><line x1="18" y1="34" x2="30" y2="34" stroke="#0A0A0A" stroke-width="1"/></svg>
-      <div class="label">The build</div>
-      <p>Whatever that practice turns up gets rebuilt properly, targeting that exact gap rather than re-covering everything that's already solid.</p>
-    </div>
-    <div class="fit-card tall">
-      <div class="fit-word">AUTOMATE</div>
-      <svg class="fit-icon" viewBox="0 0 60 60" fill="none"><circle cx="27" cy="30" r="16" stroke="#0A0A0A" stroke-width="1.25"/><line x1="27" y1="30" x2="27" y2="20" stroke="#0A0A0A" stroke-width="1.25"/><line x1="27" y1="30" x2="35" y2="34" stroke="#0A0A0A" stroke-width="1.25"/><path d="M40 14 L45 19 L52 10" stroke="#0A0A0A" stroke-width="1.5" fill="none"/></svg>
-      <div class="label">The finish</div>
-      <p>Practice under real exam conditions, timed and marked against VCAA criteria, until the process is automatic.</p>
-    </div>
+<!-- ============ CARDS (Hermes platform row → year levels) ============ -->
+<div class="cards reveal">
+  <div class="cards-head">
+    <div class="mono">What I teach</div>
+    <h2>Primary school, Year 7–10, and VCE General Maths.</h2>
   </div>
-</div>
-
-<div class="quote reveal">
-  <div class="quote-mark">"</div>
-  <div class="quote-body">
-    <p>The gap between a study score of 30 and a study score of <span>50</span> is rarely talent. It's whether anyone ever showed you the pattern.</p>
-    <div class="who">Teaching philosophy</div>
-  </div>
-</div>
-
-<div class="rule"></div>
-
-<section class="testimonials reveal" aria-labelledby="testimonials-heading">
-  <div class="testimonials-heading">
-    <div class="fit-heading">Student &amp; parent feedback</div>
-    <h2 id="testimonials-heading">What students and parents say.</h2>
-    <p>Honest feedback from students and families I’ve worked with.</p>
-  </div>
-  <div class="testimonial-grid">
-    <article class="testimonial-card">
-      <div class="testimonial-mark" aria-hidden="true">“</div>
-      <blockquote>Thank you for your dedication and patience, especially when you first taught me the three-step Financial Solver. I thought it was so hard at first, but your help really got me through a tough year.</blockquote>
-      <footer><strong>Bella</strong><span>VCE student</span></footer>
+  <div class="cards-grid">
+    <article class="card">
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="#0A0A0A" stroke-width="1.2"/><circle cx="50" cy="50" r="18" stroke="#0A0A0A" stroke-width="1"/><circle cx="50" cy="50" r="6" fill="#0A0A0A"/></svg>
+      </div>
+      <div class="card-tag">Primary school</div>
+      <h3>Foundations</h3>
+      <p class="card-sub">Number, measurement, space, statistics, and early algebra, built before high-school maths begins.</p>
+      <a class="card-link" href="pricing.html">View rates</a>
     </article>
-    <article class="testimonial-card">
-      <div class="testimonial-mark" aria-hidden="true">“</div>
-      <blockquote>You helped make things easier for me. I really appreciated how patient you were whenever I got a question wrong, and how you supported me throughout the year.</blockquote>
-      <footer><strong>Crystal</strong><span>VCE student</span></footer>
+    <article class="card">
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none"><path d="M20 80 L50 30 L80 80 Z" stroke="#0A0A0A" stroke-width="1.2"/><line x1="35" y1="64" x2="65" y2="64" stroke="#0A0A0A" stroke-width="1"/><line x1="42" y1="50" x2="58" y2="50" stroke="#0A0A0A" stroke-width="1"/></svg>
+      </div>
+      <div class="card-tag">Year 7–10</div>
+      <h3>Bridge the gaps</h3>
+      <p class="card-sub">Algebra, measurement and geometry, statistics and probability, building toward VCE subject choices in Year 10.</p>
+      <a class="card-link" href="pricing.html">View rates</a>
     </article>
-    <article class="testimonial-card">
-      <div class="testimonial-mark" aria-hidden="true">“</div>
-      <blockquote>Your patience, advice and tips throughout the year were deeply appreciated. Our family thought of you as the best tutor and we would have no hesitation recommending you to others.</blockquote>
-      <footer><strong>Anna</strong><span>Parent of a Year 12 student</span></footer>
-    </article>
-    <article class="testimonial-card">
-      <div class="testimonial-mark" aria-hidden="true">“</div>
-      <blockquote>You genuinely wanted what was best for us. We are extremely grateful for your support, the time you took to answer our questions, and everything you taught us throughout the year.</blockquote>
-      <footer><strong>Katherine &amp; Chris</strong><span>Students</span></footer>
+    <article class="card">
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none"><path d="M20 85 Q 50 15 80 85" stroke="#0A0A0A" stroke-width="1.2"/><line x1="20" y1="85" x2="80" y2="85" stroke="#0A0A0A" stroke-width="1"/><circle cx="50" cy="42" r="3.5" fill="#0A0A0A"/></svg>
+      </div>
+      <div class="card-tag">VCE General Maths</div>
+      <h3>Close the gap</h3>
+      <p class="card-sub">Data analysis, financial modelling, matrices, and networks, taught properly and drilled under exam conditions.</p>
+      <a class="card-link" href="pricing.html">View rates</a>
     </article>
   </div>
-</section>
+</div>
 
-<div class="rule"></div>
-
-<div class="about-teaser reveal">
-  <div class="framed-box" style="flex:0 0 220px; aspect-ratio:1/1.1;">
-    <svg width="60%" viewBox="0 0 100 100" role="img" aria-label="Abstract mathematical diagram representing the tutor's teaching approach"><circle cx="50" cy="50" r="30" stroke="#0A0A0A" stroke-width="1" fill="none"/><line x1="50" y1="20" x2="50" y2="80" stroke="#0A0A0A" stroke-width="1"/></svg>
+<!-- ============ FEATURE PREVIEW (Hermes #1..#6) ============ -->
+<div class="features reveal">
+  <div class="features-head">
+    <div class="mono">How it works — preview</div>
+    <h2>Four steps, no guesswork.</h2>
   </div>
-  <div class="copy">
-    <h2>Taught by someone who still remembers what it's like to sit the exam.</h2>
-    <p>Melbourne-based, tutoring VCE General Maths privately since 2020 alongside a finance background and university-level statistics tutoring, backed by an ATAR of 98.00 and a perfect study score of 50 in General Maths itself. The approach comes from marking and diagnosing exam-style work as a university tutor, and from writing VCE General Maths textbook content for Edrolo, not just from having done well in the subject once.</p>
-    <a class="cta" href="tutoring.html">More about the approach</a>
+
+  <div class="feature-block">
+    <div class="feature-num"><b>#1</b>Understand</div>
+    <div class="feature-body">
+      <h3><em>First principles.</em></h3>
+      <p>Every topic starts with the concept itself, taught from first principles, so it actually makes sense rather than just being memorised. Rote learning gets partway there, but caps how far marks can really go.</p>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-num"><b>#2</b>Diagnose</div>
+    <div class="feature-body">
+      <h3><em>Find the gap.</em></h3>
+      <p>Exercises, tests, and homework reveal exactly where marks are still slipping — a specific technique, a formula, or a step that isn't automatic yet — not a vague sense of needing more practice.</p>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-num"><b>#3</b>Rebuild</div>
+    <div class="feature-body">
+      <h3><em>Fix it properly.</em></h3>
+      <p>Whatever that practice turns up gets rebuilt from wherever it actually broke down, not from the start of the textbook, so time goes toward what's missing rather than what's already solid.</p>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-num"><b>#4</b>Automate</div>
+    <div class="feature-body">
+      <h3><em>Exam conditions.</em></h3>
+      <p>Closer to SACs and exams, sessions shift to timed practice marked against VCAA criteria, so the process holds up under real exam pressure, not just in a quiet room with no clock.</p>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-num"><b>#5</b>Resources</div>
+    <div class="feature-body">
+      <h3><em>Notes included.</em></h3>
+      <p>Session notes, printed materials, and recordings of online sessions, so what happens in the lesson carries into the week between sessions.</p>
+    </div>
+  </div>
+
+  <div class="feature-block">
+    <div class="feature-num"><b>#6</b>Support</div>
+    <div class="feature-body">
+      <h3><em>Between sessions.</em></h3>
+      <p>One-to-one attention doesn't stop at the lesson. Questions get answered between sessions, and rescheduling is free — no commitment, one-off sessions available.</p>
+    </div>
   </div>
 </div>
 
-<div class="giant-brand" aria-hidden="true">J. Tutoring</div>
+<!-- ============ TESTIMONIALS ============ -->
+<div class="testimonials reveal">
+  <div class="testimonials-head">
+    <div class="mono">Student &amp; parent feedback</div>
+    <h2>What students and parents say.</h2>
+  </div>
+  <div class="testimonials-grid">
+    <article class="tcard">
+      <blockquote>“Thank you for your dedication and patience, especially when you first taught me the three-step Financial Solver. I thought it was so hard at first, but your help really got me through a tough year.”</blockquote>
+      <footer><strong>Bella</strong>VCE student</footer>
+    </article>
+    <article class="tcard">
+      <blockquote>“You helped make things easier for me. I really appreciated how patient you were whenever I got a question wrong, and how you supported me throughout the year.”</blockquote>
+      <footer><strong>Crystal</strong>VCE student</footer>
+    </article>
+    <article class="tcard">
+      <blockquote>“Your patience, advice and tips throughout the year were deeply appreciated. Our family thought of you as the best tutor and we would have no hesitation recommending you to others.”</blockquote>
+      <footer><strong>Anna</strong>Parent of a Year 12 student</footer>
+    </article>
+    <article class="tcard">
+      <blockquote>“You genuinely wanted what was best for us. We are extremely grateful for your support, the time you took to answer our questions, and everything you taught us throughout the year.”</blockquote>
+      <footer><strong>Katherine &amp; Chris</strong>Students</footer>
+    </article>
+  </div>
+</div>
 
-<div class="closing">
-  <h2>Ready to close the gap?</h2>
-  <a class="cta" href="contact.html">Request a trial</a>
+<!-- ============ GIANT WORDMARK ============ -->
+<div class="wordmark" aria-hidden="true">J. Tutoring</div>
+
+<!-- ============ PRICING BAND (Hermes "Nous Portal") ============ -->
+<div class="band">
+  <div class="mono">Simple rates</div>
+  <h2>Online $50 · In-person $60 · Group $40</h2>
+  <p class="dek">One-on-one, 60-minute sessions unless noted otherwise. All sessions include notes, and online sessions include a recording. Group rates are per student and online only for now.</p>
+  <a class="btn btn-solid" href="pricing.html">View all rates</a>
 </div>
 
 </main>
@@ -221,6 +208,5 @@
 </footer>
 
 <script src="script.js"></script>
-<style>@keyframes dotIn{to{opacity:1;}} .dot{opacity:0;} @media (prefers-reduced-motion:reduce){.dot{opacity:1;}}</style>
 </body>
 </html>

@@ -13,17 +13,16 @@
 <meta property="og:url" content="https://justingenmaths.com/contact.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300..600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300..600&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Skip to content</a>
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <nav aria-label="Primary navigation">
-  <a class="mark" href="index.html">J. Tutoring</a>
+  <a class="mark" href="index.html">J. <span>Tutoring</span></a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navList" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul id="navList">
     <li><a href="index.html">Home</a></li>
@@ -37,9 +36,10 @@
 </nav>
 
 <main id="main-content">
-<div class="page-header">
-  <div class="eyebrow">Contact</div>
-  <h1>Get in touch.</h1>
+
+<div class="page-hero">
+  <div class="mono">Contact</div>
+  <h1>Get in <span class="it">touch.</span></h1>
   <p class="dek">Send a few lines about what you're studying and what's not clicking, and expect a reply within a day or two.</p>
 </div>
 
@@ -67,7 +67,7 @@
       <div id="formError" class="form-message form-message--error" role="alert" aria-live="assertive" hidden></div>
     </form>
     <div id="formSuccess" class="form-success" role="status" aria-live="polite" hidden tabindex="-1">
-      <p class="accent" style="font-size:26px; margin-bottom:14px;">Message sent.</p>
+      <p class="accent" style="font-family:var(--serif); font-style:italic; font-size:26px; margin-bottom:14px;">Message sent.</p>
       <p style="font-size:14px; opacity:0.7; max-width:380px; line-height:1.6;">Thanks, that's come through. Expect a reply within a day or two.</p>
     </div>
   </div>
@@ -75,11 +75,11 @@
   <div class="contact-info">
     <div class="item">
       <div class="k">Email</div>
-      <div class="v"><a href="mailto:j-tutoring@outlook.com" style="color:inherit; text-decoration:none;">j-tutoring@outlook.com</a></div>
+      <div class="v"><a href="mailto:j-tutoring@outlook.com">j-tutoring@outlook.com</a></div>
     </div>
     <div class="item">
       <div class="k">Phone</div>
-      <div class="v"><a href="tel:+61431363398" style="color:inherit; text-decoration:none;">+61 431 363 398</a></div>
+      <div class="v"><a href="tel:+61431363398">+61 431 363 398</a></div>
     </div>
     <div class="item">
       <div class="k">Location</div>

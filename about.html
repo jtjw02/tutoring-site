@@ -13,20 +13,16 @@
 <meta property="og:url" content="https://justingenmaths.com/about.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300..600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@300..600&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
-<style>
-  .about-photo{flex:0 0 260px; aspect-ratio:1/1.1; align-self:start;}
-</style>
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Skip to content</a>
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <nav aria-label="Primary navigation">
-  <a class="mark" href="index.html">J. Tutoring</a>
+  <a class="mark" href="index.html">J. <span>Tutoring</span></a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navList" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul id="navList">
     <li><a href="index.html">Home</a></li>
@@ -40,15 +36,16 @@
 </nav>
 
 <main id="main-content">
-<div class="page-header">
-  <div class="eyebrow">About</div>
-  <h1>The tutor.</h1>
+
+<div class="page-hero">
+  <div class="mono">About</div>
+  <h1>The <span class="it">tutor.</span></h1>
   <p class="dek">Melbourne-based. Finance background. Teaching VCE General Maths since 2020.</p>
 </div>
 
 <div class="section reveal">
   <div class="two-col">
-    <div class="copy" style="font-size:15px; line-height:1.85; opacity:0.85;">
+    <div class="copy">
       <p style="margin-bottom:24px;">I started tutoring VCE General Maths in 2020, almost by accident. A family friend needed help before a SAC, and I found that explaining a concept clearly is its own skill, separate from simply knowing the content.</p>
       <p style="margin-bottom:24px;">I finished school with an ATAR of 98.00 and a perfect study score of 50 in General Maths, but the result that matters most in tutoring is being able to make the underlying pattern clear to someone seeing it for the first time.</p>
       <p style="margin-bottom:24px;">Since then I've completed a Master of Finance and a Bachelor of Commerce (double major in Finance and Economics) at the University of Melbourne. I also tutor first-year statistics and second-year corporate finance at university level, which means I'm constantly re-explaining technical material to people meeting it for the first time, a habit that carries straight back into VCE tutoring. I've also been directly involved in writing the VCE General Maths textbook at Edrolo, which has helped me understand the course at a level most tutors never need to, not just how to solve the problems, but how the whole syllabus fits together and where students actually get stuck.</p>
@@ -62,7 +59,7 @@
         <span>University statistics &amp; corporate finance tutor</span>
       </div>
     </div>
-    <div class="framed-box about-photo">
+    <div class="framed-box" style="aspect-ratio:1/1.1; position:sticky; top:40px;">
       <svg width="55%" viewBox="0 0 100 100" role="img" aria-label="Abstract mathematical diagram representing the tutor's teaching approach">
         <circle cx="50" cy="50" r="32" stroke="#0A0A0A" stroke-width="1" fill="none"/>
         <line x1="50" y1="18" x2="50" y2="82" stroke="#0A0A0A" stroke-width="1"/>
@@ -72,13 +69,16 @@
     </div>
   </div>
 </div>
-</main>
 
-<div class="section tight about-cta">
+<div class="rule"></div>
+
+<div class="section center">
   <h2>Want to see whether the approach fits?</h2>
-  <p class="lede">Start with a trial lesson or send a few details about what you're studying.</p>
-  <a class="cta" href="contact.html" style="margin-top:26px;">Request a trial</a>
+  <p class="lede" style="margin-left:auto; margin-right:auto;">Start with a trial lesson or send a few details about what you're studying.</p>
+  <a class="cta" href="contact.html" style="margin-top:32px;">Request a trial</a>
 </div>
+
+</main>
 
 <footer>
   <span>Melbourne, Australia</span>

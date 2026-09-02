@@ -41,15 +41,21 @@ if (reduceMotion) {
   document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 }
 
-// Hero graph draw-in (home page only).
-const path = document.getElementById('parabola');
-if (path && !reduceMotion) {
-  const length = path.getTotalLength();
-  path.style.strokeDasharray = length;
-  path.style.strokeDashoffset = length;
-  requestAnimationFrame(() => {
-    path.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(0.16,1,0.3,1)';
-    path.style.strokeDashoffset = 0;
+// Session-format tabs (home page install section).
+const installTabs = document.querySelectorAll('.install-tabs button');
+const installLine = document.getElementById('installLine');
+if (installTabs.length && installLine) {
+  const lines = {
+    'In person': 'trial@justingenmaths.com → 20–30 min free lesson — Melbourne',
+    'Online': 'trial@justingenmaths.com → 20–30 min free lesson — anywhere'
+  };
+  installTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      installTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      installLine.textContent = lines[tab.textContent.trim()] || installLine.textContent;
+    });
   });
 }
 
