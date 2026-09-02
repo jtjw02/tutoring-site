@@ -418,6 +418,17 @@ nav ul li.current a{color:var(--white); border-bottom-color:var(--white);}
 .cta:after{content:"→"; font-size:14px;}
 
 /* ============================================================
+   ARTICLE — centered reading column for blog posts
+   ============================================================ */
+.article{max-width:720px; margin:0 auto; padding:90px var(--gutter) 30px;}
+.article p{font-size:15.5px; line-height:1.85; color:rgba(10,10,10,.88); margin-bottom:20px;}
+.article h2{font-family:var(--serif); font-weight:500; font-size:26px; margin:46px 0 14px;}
+.article .emph{font-size:16px; line-height:1.8; margin:30px 0;}
+@media (max-width:900px){
+  .article{padding:60px 24px 20px;}
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 footer{
